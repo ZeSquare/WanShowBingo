@@ -17,6 +17,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/websocket/1.0.34/ws.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.min.js"></script>
     <script src ="./resources/js/script-rev2.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
     <style>
       .sheet-link {
         display: inline-block;
@@ -107,6 +109,17 @@
           });
         }
         </script>
+	<button onclick="capture()">Capture and Download</button>
+    	<script>
+	      function capture() {
+	        html2canvas(document.body).then(function(canvas) {
+	          var link = document.createElement('a');
+	          link.download = 'webpage.png';
+	          link.href = canvas.toDataURL();
+	          link.click();
+	        });
+	}
+	</script>
         <script>
           $(document).ready(function() {
             function updateTimer(data) {
