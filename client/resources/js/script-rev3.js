@@ -156,6 +156,9 @@ $(function() {
     "Linus says: 'Look, the thing is'"
   ];
 
+  const staticEntries = [];
+  staticEntries.push(...entries);
+
   // Retrieve cached bingo card or generate a new one
   let spaces = JSON.parse(localStorage.getItem(CACHE_KEY));
   let clickedTiles = []; // Define clickedTiles array
@@ -189,6 +192,10 @@ $(function() {
       if (i === 12) {
         card[i] = "***Free Space*** \n\n Late";
       } else {
+        if (entries.length == 0) {
+          entries.push(...staticEntries);
+        }
+        
         const choice = Math.floor(Math.random() * entries.length);
         card[i] = entries[choice];
         entries.splice(choice, 1);
