@@ -207,9 +207,11 @@ $(function() {
     // Update the displayed bingo card
     const boardTiles = $(".item");
     boardTiles.each(function(index) {
-      const tileText = $(this).find('p');
-      tileText.text(spaces[index]);
-      $(this).removeClass('clicked');
+      if(index != 12) {
+        const tileText = $(this).find('p');
+        tileText.text(spaces[index]);
+        $(this).removeClass('clicked');
+      }
     });
 
     loser();
