@@ -41,6 +41,7 @@
             <a href="https://wanshow.bingo/leaderboards.html"><i class="fa-solid fa-trophy"></i> Leaderboards</a>
             <a href="https://discord.gg/pWS5mw7jFz" target="_blank"><i class="fab fa-discord"></i> Discord</a>
             <a href="https://status.wanshow.bingo/" target="_blank"><i class="fa-solid fa-signal"></i> Status Page</a>
+       	    <button onclick="capture()"><i class="fad fa-camera fa-sm"></i></button>
           </div>
           <div class="nav-login">
             <a href="#"><i class="fa-regular fa-user" target="_blank"></i> Login</a>
@@ -106,6 +107,31 @@
             }
           });
         }
+        </script>
+	<script>
+          function capture() {
+            // Get the specific element you want to capture
+            var elementToCapture = document.getElementById('game');
+          
+            // Hide the elements you want to exclude from the screenshot
+            var elementsToHide = elementToCapture.querySelectorAll('.refreshButton, .user-count, .the-team, button');
+            elementsToHide.forEach(function(element) {
+              element.style.display = 'none';
+            });
+          
+            // Use html2canvas to capture the modified element
+            html2canvas(elementToCapture).then(function(canvas) {
+              // Show the hidden elements again
+              elementsToHide.forEach(function(element) {
+                element.style.display = '';
+              });
+          
+              var link = document.createElement('a');
+              link.download = 'wanshowbingo.png';
+              link.href = canvas.toDataURL();
+              link.click();
+            });
+          }
         </script>
         <script>
           $(document).ready(function() {
