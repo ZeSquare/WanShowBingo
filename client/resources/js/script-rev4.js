@@ -59,6 +59,7 @@ $(function() {
   //Populate
   const entries = [
     "Dan complains about fingers",
+    "Wish.com items suck",
     "Linus or Luke or Dan sighs",
     "Linus ignores Luke to change the topic",
     "Linus hates on Twitch Chat",
