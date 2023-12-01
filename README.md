@@ -3,6 +3,8 @@
 # WanShowBingo
 The source code for the wan show bingo client & server. https://www.wanshow.bingo/
 
+UPDATE: December 1, 2023 - WAN Show Bingo has been replaced by a brand new React App, and this repository will no longer receive updates. Currently available at https://beta.wanshow.bingo
+
 [![Discord](https://invidget.switchblade.xyz/pWS5mw7jFz)](https://discord.gg/pWS5mw7jFz)
 
 ## Client
